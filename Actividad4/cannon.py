@@ -54,12 +54,14 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
+    # Por cada uno de los balones se incrementa la velocidad de movimiento en el eje x 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 3 #0.5
 
+    # La velocidad del proyectil incrementa al multiplicar el valor de speed por cierta cantidad
     if inside(ball):
-        speed.y -= 0.35
-        ball.move(speed)
+        speed.y -= 0.35 
+        ball.move(speed*3)
 
     dupe = targets.copy()
     targets.clear()
