@@ -8,10 +8,8 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
-from ast import Pass
-import turtle
+
 from turtle import *
-import turtle
 import math
 
 from freegames import vector
@@ -35,21 +33,37 @@ def square(start, end):
     for count in range(4):
         forward(end.x - start.x)
         left(90)
-
     end_fill()
 
 
 def circles(start, end):
     """Draw circle from start to end."""
-    t = turtle.Turtle()
-  
-  
-    r = 50
-    t.circle(r)
+    # Cálculo del radio por medio de la fórmula de distancia entre dos puntos
+    r = math.sqrt((end.x - start.x)**2 + (end.y - end.x)**2) / 2
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill() 
+    circle(r)
+    end_fill()    
 
 
 def rectangle(start, end):
-    pass
+    """Draw rectangle from start to end."""
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    # Dibujar el recángulo y dependiendo de los lados, la distancia entre los puntos es el doble de la distancia o solo la distancia
+    for count in range(4):
+        if(count == 1 or count == 3):
+            forward(end.x - start.x)
+            left(90)
+        else:
+            forward(2 * (end.x - start.x))
+            left(90)
+
+    end_fill()
 
 
 def triangle(start, end):
@@ -89,7 +103,7 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
-#Aqui esta la seleccion de colores y de la figura deseada.
+# Asignación de colores dependiendo de la letra que sea tecleada
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
