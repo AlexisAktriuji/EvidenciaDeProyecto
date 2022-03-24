@@ -45,9 +45,32 @@ def circle(start, end):
     t.circle(r)
 
 
-def rectangle(start, end):
+#def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+def rectangle(t, l, w):
+    for i in range(2):
+            t.right(90)
+            t.forward(l)
+            t.right(90)
+            t.forward(w)
+
+me = turtle.Turtle()
+me.color('blue')
+me.pensize(2)
+me.penup()
+l = 2.5
+w = 250
+x = 50
+y = 150
+
+for i in range(9):
+    rectangle(me, l, w)
+    l = l*2
+    w = w
+    x = x
+    y = y
+    me.setposition(x,y)
+    me.pendown()
 
 
 def triangle(start, end):
@@ -58,10 +81,10 @@ def triangle(start, end):
     t = turtle.Turtle()
     
     # taking input for the side of the triangle
-    s = 3
+    s = int(input("Enter the length of the side of the triangle: "))
     
     # taking the input for the color
-    col = 5
+    col = input("Enter the color name or hex value of color(# RRGGBB): ")
     
     # set the fillcolor
     t.fillcolor(col)
@@ -106,7 +129,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('magenta'), 'M')
+onkey(lambda: color('magenta'), 'M') 
 onkey(lambda: color('yellow'), 'Y')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
