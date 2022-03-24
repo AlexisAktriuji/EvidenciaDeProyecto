@@ -58,10 +58,10 @@ def triangle(start, end):
     t = turtle.Turtle()
     
     # taking input for the side of the triangle
-    s = int(input("Enter the length of the side of the triangle: "))
+    s = 3
     
     # taking the input for the color
-    col = input("Enter the color name or hex value of color(# RRGGBB): ")
+    col = 5
     
     # set the fillcolor
     t.fillcolor(col)
