@@ -30,7 +30,7 @@ def square(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-
+    # Dibujar los 4 lados del cuadrado
     for count in range(4):
         forward(end.x - start.x)
         left(90)
@@ -40,25 +40,32 @@ def square(start, end):
 
 def circles(start, end):
     """Draw circle from start to end."""
-    print(start.x, start.y)
-    print(end.x, end.y)
-    #r = math.sqrt((end.x - start.x)**2 + (end.y - end.x)**2)
-    r = abs(start.x - end.x)
-    print(r)
+    # Cálculo del radio por medio de la fórmula de distancia entre dos puntos
+    r = math.sqrt((end.x - start.x)**2 + (end.y - end.x)**2) / 2
     up()
     goto(start.x, start.y)
     down()
-
     begin_fill() 
-
     circle(r)
-
     end_fill()     
 
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    # Dibujar el recángulo y dependiendo de los lados, la distancia entre los puntos es el doble de la distancia o solo la distancia
+    for count in range(4):
+        if(count == 1 or count == 3):
+            forward(end.x - start.x)
+            left(90)
+        else:
+            forward(2 * (end.x - start.x))
+            left(90)
+
+    end_fill()
 
 
 def triangle(start, end):
@@ -91,6 +98,7 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+# Asignación de colores dependiendo de la letra que sea tecleada
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
@@ -98,6 +106,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('magenta'), 'M')
 onkey(lambda: color('yellow'), 'Y')
+# Asignación de funciones de dibujo dependiendo de la letra que sea tecleada
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circles), 'c')
