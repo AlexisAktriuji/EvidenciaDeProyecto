@@ -11,6 +11,8 @@ Exercises
 from ast import Pass
 import turtle
 from turtle import *
+import turtle
+import math
 
 from freegames import vector
 
@@ -29,7 +31,7 @@ def square(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-
+    # Dibujar los 4 lados del cuadrado
     for count in range(4):
         forward(end.x - start.x)
         left(90)
@@ -37,7 +39,7 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
+def circles(start, end):
     """Draw circle from start to end."""
     t = turtle.Turtle()
   
@@ -95,9 +97,10 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('magenta'), 'M') 
 onkey(lambda: color('yellow'), 'Y')
+# Asignación de funciones de dibujo dependiendo de la letra que sea tecleada
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circles), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
