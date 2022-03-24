@@ -8,6 +8,7 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
+from ast import Pass
 import turtle
 from turtle import *
 
@@ -45,60 +46,22 @@ def circle(start, end):
     t.circle(r)
 
 
-#def rectangle(start, end):
-    """Draw rectangle from start to end."""
-def rectangle(t, l, w):
-    for i in range(2):
-            t.right(90)
-            t.forward(l)
-            t.right(90)
-            t.forward(w)
-
-me = turtle.Turtle()
-me.color('blue')
-me.pensize(2)
-me.penup()
-l = 2.5
-w = 250
-x = 50
-y = 150
-
-for i in range(9):
-    rectangle(me, l, w)
-    l = l*2
-    w = w
-    x = x
-    y = y
-    me.setposition(x,y)
-    me.pendown()
+def rectangle(start, end):
+    pass
 
 
 def triangle(start, end):
-    """Draw triangle from start to end."""
-    import turtle
-  
-    # creating turtle pen
-    t = turtle.Turtle()
-    
-    # taking input for the side of the triangle
-    s = int(input("Enter the length of the side of the triangle: "))
-    
-    # taking the input for the color
-    col = input("Enter the color name or hex value of color(# RRGGBB): ")
-    
-    # set the fillcolor
-    t.fillcolor(col)
-    
-    # start the filling color
-    t.begin_fill()
-    
-    # drawing the triangle of side s
-    for _ in range(3):
-        t.forward(s)
-        t.right(-120)
-    
-    # ending the filling of the color
-    t.end_fill()
+    #Esta es la funcion del Triangulo y funciona con "t" , selceccion de color abajo.
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(4):
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
 
 
 def tap(x, y):
@@ -124,6 +87,7 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+#Aqui esta la seleccion de colores y de la figura deseada.
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
