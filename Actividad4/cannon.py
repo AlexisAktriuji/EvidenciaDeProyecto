@@ -74,7 +74,11 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            # Eliminar los balones que salgan de la pantalla y devolverlos a su posición inicial
+            targets.remove(target)
+            y = randrange(-150, 150)
+            target = vector(200, y)
+            targets.append(target)
 
     ontimer(move, 50)
 
