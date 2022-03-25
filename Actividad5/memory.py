@@ -7,6 +7,8 @@ Exercises:
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
+
+Propuesta: Que en lugar de números que se utilicen emojis o imagenes para que sea mucho más sencillo memorizarlo
 """
 
 from random import *
@@ -21,6 +23,8 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 writer = Turtle(visible=False)
+# Inicializar el contador de pares para poder indicar cuando el jugador gane
+pares = {'pares': 0}
 
 
 def square(x, y):
@@ -56,6 +60,8 @@ def tap(x, y):
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
     else:
+        pares['pares'] += 1
+        print("Pares: ", pares['pares'])
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
@@ -74,16 +80,22 @@ def draw():
             square(x, y)
 
     mark = state['mark']
-
+    
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x + 27, y) # Se ajusta el número 27 para que el valor se centre correctamente
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
-        goto(200, 220)
-        color('blue')
+        write(tiles[mark], font=('Arial', 30, 'normal'), align='center') # Con el parámetro align se centra el texto en el cuadrante
+        # Se muestra en pantalla el número de taps que ha realizado el jugador
+        goto(0, 220)
+        color('black')
         write("Taps: {0}".format(taps['taps'], font=('Arial', 100, 'bold')))
+    
+    if pares['pares'] == 32:
+        goto(-200, -220)
+        color('green')
+        write("Ganaste :)", font=('Arial', 50, 'bold'))
 
     update()
     ontimer(draw, 100)
@@ -91,6 +103,7 @@ def draw():
 
 shuffle(tiles)
 setup(500, 500, 370, 0)
+#setup(420, 420, 370, 0)
 addshape(car) 
 hideturtle()
 tracer(False)
