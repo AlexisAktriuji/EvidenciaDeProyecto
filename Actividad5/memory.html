@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module memory</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>memory</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/jorgechb/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Tec/ITC/Semestre%206/Semana%20Tec%20El%20arte%20de%20la%20programacio%CC%81n/ActividadJuegos/EvidenciaDeProyecto/Actividad5/memory.py">/Users/jorgechb/Library/Mobile Documents/com~apple~CloudDocs/Documents/Tec/ITC/Semestre 6/Semana Tec El arte de la programación/ActividadJuegos/EvidenciaDeProyecto/Actividad5/memory.py</a></font></td></tr></table>
+    <p><tt>Memory,&nbsp;puzzle&nbsp;game&nbsp;of&nbsp;number&nbsp;pairs.<br>
+&nbsp;<br>
+Exercises:<br>
+&nbsp;<br>
+1.&nbsp;Count&nbsp;and&nbsp;print&nbsp;how&nbsp;many&nbsp;taps&nbsp;occur.<br>
+2.&nbsp;Decrease&nbsp;the&nbsp;number&nbsp;of&nbsp;tiles&nbsp;to&nbsp;a&nbsp;4x4&nbsp;grid.<br>
+3.&nbsp;Detect&nbsp;when&nbsp;all&nbsp;tiles&nbsp;are&nbsp;revealed.<br>
+4.&nbsp;Center&nbsp;single-digit&nbsp;tile.<br>
+5.&nbsp;Use&nbsp;letters&nbsp;instead&nbsp;of&nbsp;tiles.<br>
+&nbsp;<br>
+Propuesta:&nbsp;Que&nbsp;en&nbsp;lugar&nbsp;de&nbsp;números&nbsp;que&nbsp;se&nbsp;utilicen&nbsp;emojis&nbsp;o&nbsp;imagenes&nbsp;para&nbsp;que&nbsp;sea&nbsp;mucho&nbsp;más&nbsp;sencillo&nbsp;memorizarlo</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-draw"><strong>draw</strong></a>()</dt><dd><tt>Draw&nbsp;image&nbsp;and&nbsp;tiles.</tt></dd></dl>
+ <dl><dt><a name="-getrandbits"><strong>getrandbits</strong></a>(k, /)<font color="#909090"><font face="helvetica, arial"> method of <a href="random.html#Random">random.Random</a> instance</font></font></dt><dd><tt><a href="#-getrandbits">getrandbits</a>(k)&nbsp;-&gt;&nbsp;x.&nbsp;&nbsp;Generates&nbsp;an&nbsp;int&nbsp;with&nbsp;k&nbsp;random&nbsp;bits.</tt></dd></dl>
+ <dl><dt><a name="-index"><strong>index</strong></a>(x, y)</dt><dd><tt>Convert&nbsp;(x,&nbsp;y)&nbsp;coordinates&nbsp;to&nbsp;tiles&nbsp;index.</tt></dd></dl>
+ <dl><dt><a name="-random"><strong>random</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="random.html#Random">random.Random</a> instance</font></font></dt><dd><tt><a href="#-random">random</a>()&nbsp;-&gt;&nbsp;x&nbsp;in&nbsp;the&nbsp;interval&nbsp;[0,&nbsp;1).</tt></dd></dl>
+ <dl><dt><a name="-square"><strong>square</strong></a>(x, y)</dt><dd><tt>Draw&nbsp;white&nbsp;square&nbsp;with&nbsp;black&nbsp;outline&nbsp;at&nbsp;(x,&nbsp;y).</tt></dd></dl>
+ <dl><dt><a name="-tap"><strong>tap</strong></a>(x, y)</dt><dd><tt>Update&nbsp;mark&nbsp;and&nbsp;hidden&nbsp;tiles&nbsp;based&nbsp;on&nbsp;tap.</tt></dd></dl>
+ <dl><dt><a name="-xy"><strong>xy</strong></a>(count)</dt><dd><tt>Convert&nbsp;tiles&nbsp;count&nbsp;to&nbsp;(x,&nbsp;y)&nbsp;coordinates.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>car</strong> = '/opt/homebrew/lib/python3.9/site-packages/freegames/car.gif'<br>
+<strong>hide</strong> = [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, ...]<br>
+<strong>pares</strong> = {'pares': 0}<br>
+<strong>state</strong> = {'mark': 44}<br>
+<strong>taps</strong> = {'taps': 2}<br>
+<strong>tiles</strong> = [19, 19, 4, 29, 11, 2, 21, 31, 17, 31, 22, 14, 12, 23, 25, 2, 13, 15, 10, 18, ...]<br>
+<strong>writer</strong> = &lt;turtle.Turtle object&gt;</td></tr></table>
+</body></html>

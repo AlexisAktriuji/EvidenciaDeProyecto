@@ -91,7 +91,7 @@ def draw():
         goto(0, 220)
         color('black')
         write("Taps: {0}".format(taps['taps'], font=('Arial', 100, 'bold')))
-    
+    # Si el número de pares es igual a 32 significa que le jugador ha ganado y se han destapado todos los cuadros
     if pares['pares'] == 32:
         goto(-200, -220)
         color('green')
@@ -103,7 +103,6 @@ def draw():
 
 shuffle(tiles)
 setup(500, 500, 370, 0)
-#setup(420, 420, 370, 0)
 addshape(car) 
 hideturtle()
 tracer(False)

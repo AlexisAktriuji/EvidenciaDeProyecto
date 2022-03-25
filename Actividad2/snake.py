@@ -20,9 +20,11 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
+
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
+
 
 def move():
     "Move snake forward one segment."
@@ -53,12 +55,12 @@ def move():
     ontimer(move, 100)
 
 
-#Creacion de Funcion para el movimiento de la comida sin que sea comida.
+# Creacion de Funcion para el movimiento de la comida un paso a la vez sin salisde la ventana
 def moveFood():
-    food.x=randrange(-15, 15)*10
-    food.y=randrange(-15, 15)*10
+    "Movimiento de la comida un paso a la vez sin que salga de la ventana"
+    food.x=randrange(-15, 15) * 10
+    food.y=randrange(-15, 15) * 10
     ontimer(moveFood, 5000)
-
 
 
 setup(420, 420, 370, 0)
