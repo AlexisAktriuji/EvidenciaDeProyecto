@@ -13,6 +13,7 @@ ghosts = [
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
+#Modificación del codigo
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0,
@@ -136,7 +137,7 @@ def move():
             return
 
     ontimer(move, 20)
-
+#Incremento de velocidad
 def change(x, y):
     "Change pacman aim if valid."
     if valid(pacman + vector(x, y)):
