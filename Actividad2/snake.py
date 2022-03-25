@@ -5,6 +5,15 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+# Se obtiene un número random para poder cambiar el color cada que se corre el juego
+randomSnake = randrange(1, 5)
+randomFood = 0
+listaColores = ['blue', 'magenta', 'cyan', 'orange', 'black']
+if randomSnake < 5:
+    randomFood = randomSnake - 1
+else: 
+    randomFood = randomSnake + 1
+
 
 def change(x, y):
     "Change snake direction."
@@ -37,9 +46,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, listaColores[randomSnake])
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, listaColores[randomFood])
     update()
     ontimer(move, 100)
 
